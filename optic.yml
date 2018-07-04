@@ -1,0 +1,15 @@
+name: Optic Todo Demo
+parsers:
+  - es7
+
+knowledge_paths:
+  - /docs
+
+skills:
+  - optic:express-js@0.3.0
+  - optic:rest@0.3.0
+  - optic:mongoose@0.3.0
+  - optic:requestjs@0.3.0
+
+exclude:
+  - "node_modules"

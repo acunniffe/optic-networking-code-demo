@@ -1,0 +1,17 @@
+{
+  "name": "generate-networking-code-tutorial",
+  "version": "1.0.0",
+  "description": "Consuming REST APIs, even your own, is no walk in the park. It can take many iterations to get the inputs passing correctly and you may find yourself shooting in the dark if the endpoints aren’t properly documented.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "request": "^2.87.0"
+  }
+}
