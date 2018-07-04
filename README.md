@@ -140,7 +140,7 @@ Every API changes which means your networking code will need to change as well. 
 
 Remember all those name and source annotations? Optic uses those to create a acyclic graph representing the internal dependencies of your code. Each named model becomes a node and the source annotations become edges between them. When you press "Sync" in Optic it will diff the graph representing your current code base with the expected graph.
 
-To see how this works let's first add some custom code to our request. For now I'm just going to replace the generated callback with a `console.log` of the response but you put any custom code here.
+To see how this works let's first add some custom code to our request. For now I'm just going to replace the generated callback with a `console.log` of the response but you can put any custom code here.
 
 ```javascript
 request.get({ uri: '/hello', qs: { name: name }}, function (err, response, body) { //source: Hello World Endpoint -> optic:requestjs/requestFromRoute {}
