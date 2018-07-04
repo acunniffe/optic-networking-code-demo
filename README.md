@@ -68,7 +68,7 @@ Pretty cool! It auto documented the structure of the endpoint without any annota
 
 Now let's apply a transformation to turn this endpoint into a request.
 
-^A transformation is a pure function that takes a JSON object that conforms to Schema A as input and returns a JSON object that conforms to Schema B.
+>A transformation is a pure function that takes a JSON object that conforms to Schema A as input and returns a JSON object that conforms to Schema B.
 
 In this case our transformation takes the JSON object above that represents an endpoint and returns a similar JSON object that represents a HTTP request.  
 
@@ -88,7 +88,7 @@ request.get({ uri: '/hello', qs: { name: name }}, function (err, response, body)
 
 Optic has generated an HTTP Request by using its interpretation of the Route as input.
 
-^Remember: Since you're using Optic you can edit the generated code and Optic will still be able to help you maintain it over time.
+>Remember: Since you're using Optic you can edit the generated code and Optic will still be able to help you maintain it over time.
 
 ## Generating Networking Calls from your Client Code
 The above example is great when you're exploring Optic, but it isn't very practical to generate networking code on the server when it's really needed in the client.
