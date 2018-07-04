@@ -45,7 +45,7 @@ Add the following demo endpoint anywhere in your project or use one of your own 
 
 ```javascript
 app.get('/hello', (req, res) => {
-	res.send(200, 'Hello '+req.query.name)
+    res.send(200, 'Hello '+req.query.name)
 }
 ```
 
@@ -97,7 +97,7 @@ Before we do that, update your endpoint to include one of Optic's name annotatio
 
 ```javascript
 app.get('/hello', (req, res) => { //name: Hello World Endpoint
-	res.send(200, 'Hello '+req.query.name)
+    res.send(200, 'Hello '+req.query.name)
 }
 ```
 
@@ -144,7 +144,7 @@ To see how this works let's first add some custom code to our request. For now I
 
 ```javascript
 request.get({ uri: '/hello', qs: { name: name }}, function (err, response, body) { //source: Hello World Endpoint -> optic:requestjs/requestFromRoute {}
-	console.log(response)
+    console.log(response)
 })
 ```
 
@@ -152,7 +152,7 @@ Now let's go back to the endpoint and add a `lastName` query parameter and chang
 
 ```javascript
 app.get('/hello', (req, res) => { //name: Hello World Endpoint
-	res.send(200, `Hello ${req.query.firstName} ${req.query.lastName}`)
+    res.send(200, `Hello ${req.query.firstName} ${req.query.lastName}`)
 }
 ```
 
@@ -166,7 +166,7 @@ The new request should look like this. Notice how it only updated the query stri
 
 ```javascript
 request.get({ uri: '/hello', qs: { firstName: firstName, lastName: lastName }}, function (err, response, body) { //source: Hello World Endpoint -> optic:requestjs/requestFromRoute {}
-	console.log(response)
+    console.log(response)
 })
 ```
 
