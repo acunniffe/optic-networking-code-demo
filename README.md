@@ -8,7 +8,7 @@ In this tutorial we are going to configure Optic to automatically generate/maint
 * [Express](https://expressjs.com/) REST API
 * [Request](https://github.com/request/request) as the client networking library
 
-I've included the source in a demo project to make it easy to try this out. Download it here.
+I've included the source in a demo project to make it easy to try this out. [Download it here](https://github.com/acunniffe/optic-networking-code-demo).
 
 ## Including Skills
 To get started we need to include some basic Javascript skills maintained by the Optic team. You can do this by updating the `optic.yml` file in your project's root directory.
