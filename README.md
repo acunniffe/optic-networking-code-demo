@@ -8,7 +8,7 @@ In this tutorial we are going to configure Optic to automatically generate/maint
 * [Express](https://expressjs.com/) REST API
 * [Request](https://github.com/request/request) as the client networking library
 
-I've included the source in a demo project to make it easy to try this out. Download it here.
+I've included the source in a demo project to make it easy to try this out. [Download it here](https://github.com/acunniffe/optic-networking-code-demo).
 
 ## Including Skills
 To get started we need to include some basic Javascript skills maintained by the Optic team. You can do this by updating the `optic.yml` file in your project's root directory.
@@ -45,7 +45,7 @@ Add the following demo endpoint anywhere in your project or use one of your own 
 
 ```javascript
 app.get('/hello', (req, res) => {
-	res.send(200, 'Hello '+req.query.name)
+    res.send(200, 'Hello '+req.query.name)
 }
 ```
 
@@ -68,7 +68,7 @@ Pretty cool! It auto documented the structure of the endpoint without any annota
 
 Now let's apply a transformation to turn this endpoint into a request.
 
-^A transformation is a pure function that takes a JSON object that conforms to Schema A as input and returns a JSON object that conforms to Schema B.
+>A transformation is a pure function that takes a JSON object that conforms to Schema A as input and returns a JSON object that conforms to Schema B.
 
 In this case our transformation takes the JSON object above that represents an endpoint and returns a similar JSON object that represents a HTTP request.  
 
@@ -88,7 +88,7 @@ request.get({ uri: '/hello', qs: { name: name }}, function (err, response, body)
 
 Optic has generated an HTTP Request by using its interpretation of the Route as input.
 
-^Remember: Since you're using Optic you can edit the generated code and Optic will still be able to help you maintain it over time.
+>Remember: Since you're using Optic you can edit the generated code and Optic will still be able to help you maintain it over time.
 
 ## Generating Networking Calls from your Client Code
 The above example is great when you're exploring Optic, but it isn't very practical to generate networking code on the server when it's really needed in the client.
@@ -97,7 +97,7 @@ Before we do that, update your endpoint to include one of Optic's name annotatio
 
 ```javascript
 app.get('/hello', (req, res) => { //name: Hello World Endpoint
-	res.send(200, 'Hello '+req.query.name)
+    res.send(200, 'Hello '+req.query.name)
 }
 ```
 
@@ -140,11 +140,11 @@ Every API changes which means your networking code will need to change as well. 
 
 Remember all those name and source annotations? Optic uses those to create a acyclic graph representing the internal dependencies of your code. Each named model becomes a node and the source annotations become edges between them. When you press "Sync" in Optic it will diff the graph representing your current code base with the expected graph.
 
-To see how this works let's first add some custom code to our request. For now I'm just going to replace the generated callback with a `console.log` of the response but you put any custom code here.
+To see how this works let's first add some custom code to our request. For now I'm just going to replace the generated callback with a `console.log` of the response but you can put any custom code here.
 
 ```javascript
 request.get({ uri: '/hello', qs: { name: name }}, function (err, response, body) { //source: Hello World Endpoint -> optic:requestjs/requestFromRoute {}
-	console.log(response)
+    console.log(response)
 })
 ```
 
@@ -152,7 +152,7 @@ Now let's go back to the endpoint and add a `lastName` query parameter and chang
 
 ```javascript
 app.get('/hello', (req, res) => { //name: Hello World Endpoint
-	res.send(200, `Hello ${req.query.firstName} ${req.query.lastName}`)
+    res.send(200, `Hello ${req.query.firstName} ${req.query.lastName}`)
 }
 ```
 
@@ -164,7 +164,7 @@ The new request should look like this. Notice how it only updated the query stri
 
 ```javascript
 request.get({ uri: '/hello', qs: { firstName: firstName, lastName: lastName }}, function (err, response, body) { //source: Hello World Endpoint -> optic:requestjs/requestFromRoute {}
-	console.log(response)
+    console.log(response)
 })
 ```
 
