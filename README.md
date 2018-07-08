@@ -158,9 +158,7 @@ app.get('/hello', (req, res) => { //name: Hello World Endpoint
 
 Head over to the Optic GUI and click "Sync". Optic will generate a patch for your request.
 
-![Image of Pull Request](readme-images/pull-request.png)
-
-![Image of Patch](readme-images/patch.png)
+![Image of Sync](readme-images/example-sync.gif)
 
 The new request should look like this. Notice how it only updated the query string and did not overwrite your custom code.
 
